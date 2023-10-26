@@ -1,26 +1,26 @@
 const mockReactNativeIOS = {
   Platform: {
-    OS: 'ios'
+    OS: "ios",
   },
   DeviceEventEmitter: {
     removeSubscription: () => {},
-    addListener: () => {}
-  }
+    addListener: () => {},
+  },
 };
 
 const mockReactNativeAndroid = Object.assign({}, mockReactNativeIOS, {
   Platform: {
-    OS: 'android'
-  }
+    OS: "android",
+  },
 });
 
 const mockNativePaymentsSupportedIOS = {
   canMakePayments: () => true,
   createPaymentRequest: () => {},
   handleDetailsUpdate: async () => {},
-  show: cb => cb(), // TODO, may have to fire an event that DeviceEventEmitter will listen to
-  abort: cb => cb(),
-  complete: (paymentStatus, cb) => cb()
+  show: (cb) => cb(), // TODO, may have to fire an event that DeviceEventEmitter will listen to
+  abort: async () => {},
+  complete: (paymentStatus, cb) => cb(),
 };
 
 const mockNativePaymentsUnsupportedIOS = Object.assign(
