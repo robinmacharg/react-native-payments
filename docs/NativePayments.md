@@ -159,6 +159,22 @@ NativePayments
 
 ---
 
+### openPaymentSetup()
+**(IOS Only)** Takes the user to the wallet app to add a payment method.
+
+<details>
+<summary>
+<strong>Example</strong>
+</summary>
+
+```es6
+NativePayments.openPaymentSetup();
+```
+
+</details>
+
+---
+
 ### show()
 Displays Apple Pay/Android Pay to the user.
 
