@@ -435,13 +435,13 @@ export default class PaymentRequest {
 
   _removeEventListeners() {
     // Internal Events
-    this._userDismissSubscription.remove();
-    this._userAcceptSubscription.remove();
+    this._userDismissSubscription?.remove();
+    this._userAcceptSubscription?.remove();
 
     if (IS_IOS) {
-      this._shippingAddressChangeSubscription.remove();
-      this._shippingOptionChangeSubscription.remove();
-      this._paymentMethodChangeSubscription.remove();
+      this._shippingAddressChangeSubscription?.remove();
+      this._shippingOptionChangeSubscription?.remove();
+      this._paymentMethodChangeSubscription?.remove();
     }
   }
 
@@ -522,7 +522,8 @@ export default class PaymentRequest {
           // Return `undefined` as proposed in the spec.
           return resolve(undefined);
         })
-        .catch((_err) => reject(new Error('InvalidStateError')));
+        .catch((_err) => {
+          reject(new Error('InvalidStateError'))});
     });
   }
 
@@ -534,5 +535,6 @@ export default class PaymentRequest {
   }
 
   static canMakePaymentsUsingNetworks = NativePayments.canMakePaymentsUsingNetworks;
+  static openPaymentSetup = NativePayments.openPaymentSetup;
 }
 

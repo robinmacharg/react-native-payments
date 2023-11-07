@@ -32,6 +32,11 @@ RCT_EXPORT_METHOD(canMakePaymentsUsingNetworks:
     callback(@[[NSNull null], @([PKPaymentAuthorizationViewController canMakePaymentsUsingNetworks:paymentNetworks])]);
 }
 
+RCT_EXPORT_METHOD(openPaymentSetup)
+{
+    [[[PKPassLibrary alloc] init] openPaymentSetup];
+}
+
 RCT_EXPORT_METHOD(createPaymentRequest: (NSDictionary *)methodData
                   details: (NSDictionary *)details
                   options: (NSDictionary *)options

@@ -114,6 +114,22 @@ PaymentRequest
 
 ---
 
+### openPaymentSetup()
+**(IOS Only)** Takes the user to the wallet app to add a payment method.
+
+<details>
+<summary>
+<strong>Example</strong>
+</summary>
+
+```es6
+PaymentRequest.openPaymentSetup();
+```
+
+</details>
+
+---
+
 ### show()
 Displays the payment request to the user.
 

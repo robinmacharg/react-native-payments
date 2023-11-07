@@ -10,6 +10,7 @@ const IS_ANDROID = Platform.OS === 'android';
 const NativePayments: {
   canMakePayments: boolean,
   canMakePaymentsUsingNetworks: boolean,
+  openPaymentSetup: void,
   supportedGateways: Array<string>,
   createPaymentRequest: PaymentDetailsBase => Promise<any>,
   handleDetailsUpdate: PaymentDetailsBase => Promise<any>,
@@ -55,6 +56,14 @@ const NativePayments: {
         (err, data) => resolve(data)
       );
     });
+  },
+
+  openPaymentSetup() {
+    if (IS_ANDROID) {
+      return;
+    }
+
+    ReactNativePayments.openPaymentSetup();
   },
 
   createPaymentRequest(methodData, details, options = {}) {
