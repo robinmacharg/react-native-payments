@@ -534,6 +534,7 @@ export default class PaymentRequest {
     );
   }
 
+  static applePayEnabled = NativePayments.applePayEnabled;
   static canMakePaymentsUsingNetworks = NativePayments.canMakePaymentsUsingNetworks;
   static openPaymentSetup = NativePayments.openPaymentSetup;
 }
