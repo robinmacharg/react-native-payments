@@ -9,6 +9,7 @@ const IS_ANDROID = Platform.OS === 'android';
 
 const NativePayments: {
   canMakePayments: boolean,
+  applePayEnabled: () => boolean,
   canMakePaymentsUsingNetworks: boolean,
   openPaymentSetup: void,
   supportedGateways: Array<string>,
@@ -38,6 +39,13 @@ const NativePayments: {
       // On iOS, canMakePayments is exposed as a constant.
       resolve(ReactNativePayments.canMakePayments);
     });
+  },
+
+  applePayEnabled() {
+    if (Platform.OS === 'ios') {
+      return ReactNativePayments.canMakePayments;
+    }
+    return false;
   },
 
   // TODO based on Naoufal's talk on YouTube the intention of canMakePayments is for it to work like this, so I'm thinking we can integrate Yegor's code into canMakePayments.
