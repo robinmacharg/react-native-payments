@@ -64,12 +64,16 @@ CGFloat const DEFAULT_CORNER_RADIUS = 4.0;
   PKPaymentButtonType type;
   PKPaymentButtonStyle style;
   
-  if ([buttonType isEqualToString: @"setUp"]) {
+  if ([buttonType isEqualToString: @"buy"]) {
+    type = PKPaymentButtonTypeBuy;
+  } else if ([buttonType isEqualToString: @"setUp"]) {
     type = PKPaymentButtonTypeSetUp;
-  } else if ([buttonType isEqualToString: @"continue"]) {
-    type = PKPaymentButtonTypeContinue;
   } else if ([buttonType isEqualToString: @"inStore"]) {
     type = PKPaymentButtonTypeInStore;
+  } else if ([buttonType isEqualToString: @"donate"]) {
+    type = PKPaymentButtonTypeDonate;
+  } else if ([buttonType isEqualToString: @"continue"]) {
+    type = PKPaymentButtonTypeContinue;
   } else {
     type = PKPaymentButtonTypePlain;
   }
