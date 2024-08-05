@@ -40,7 +40,7 @@
   "dependencies": {
     "es6-error": "^4.0.2",
     "uuid": "^3.1.0",
-    "validator": "^9.4.1"
+    "validator": "^13.12.0"
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
@@ -52,7 +52,7 @@
     "eslint-plugin-import": "^2.17.3",
     "husky": "^0.14.1",
     "jest": "27.5.1",
-    "react-native": "^0.70.1",
+    "react-native": "0.74.4",
     "react-test-renderer": "18.1.0"
   },
   "peerDependencies": {
